@@ -1,0 +1,166 @@
+	* {
+			margin: 0;
+			padding: 0;
+			font-family: helvetica;
+		}
+		body{
+			/*overflow: hidden;*/
+		}
+		.jly-top-div {
+			width: 100%;
+			height: 80PX;
+			border-bottom: 1px #ccc solid;
+			/*background: #CCC;*/
+			position: fixed;
+			background: #fff;
+			z-index: 999999;
+		}
+		
+		.jly-logo {
+			width: 100px;
+			margin: 0 0 0 20px;
+		}
+		
+		.jly-nav {
+			float: right;
+			display: block;
+			list-style: none;
+			/*background: #333;*/
+			margin-top: 24px;
+			margin-right: 20px;
+		}
+		
+		.jly-nav li {
+			font-size: 14px;
+			float: right;
+			/*background: red;*/
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			padding:0 28px;
+			text-align: center;
+			cursor: pointer;
+			border-radius: 50px;
+		}
+		.jly-nav li:hover {
+			float: right;
+			background: #eee;
+			line-height: 30px;
+			
+			/*background: red;*/
+			padding:0 28px;
+			text-align: center;
+			cursor: pointer;
+		}
+		
+		.jly-text {
+			width: 100%;
+			display: flex;
+			display: -webkit-flex;
+		    padding-top: 60px;
+		}
+		.jly-text .one{
+			flex: 4;
+			-webkit-flex: 4;
+			/*background: #666;*/
+		}
+		.jly-text .two{
+			flex: 2;
+			-webkit-flex: 2;
+			/*background: #000000;*/
+		}
+		.jly-one-title {
+			font-size: 52px;
+			display: block;
+			/*background: #fff;*/
+			width: 80%;
+			margin-left: 10%;
+			margin-top:30%;
+			font-weight: bolder;
+			text-shadow: 2px 8px 12px #ddd;
+			animation: myfirst 5s infinite;
+            -moz-animation: myfirst 5s infinite;	/* Firefox */
+            -webkit-animation: myfirst 5s infinite;	/* Safari 和 Chrome */
+            -o-animation: myfirst 5s infinite;	/* Opera */
+		}
+		
+		.jly-sec-title {
+			font-size: 14px;
+			display: block;
+			/*background: #fff;*/
+			width: 60%;
+			line-height: 20px;
+			margin-left: 10%;
+			color: #999;
+			margin-top: 20px;
+		}
+		
+		.jly-modal {
+			width: 100%;
+			display: flex;
+			min-height: 400px;
+			display: -webkit-flex;		
+		}
+		.ui-o{
+			flex: 4;
+			-webkit-flex: 4;
+		}
+		.ui-t{
+			flex: 2;
+			-webkit-flex: 2;
+		}
+		.ui{
+			background: #e5e5e5;
+			}
+		.tjj{
+			background: #333333;
+		}	
+		.glt{
+			background: #fff;
+		}
+		.fcy{
+			background: #DDDDDD;
+			height: 900px;
+			overflow-y: scroll;
+		}
+		.ui-title{
+			display: block;
+			font-size: 58px;
+			font-weight: bold;
+			margin-top: 180px;
+		}
+		.ui-con{
+			font-size: 14px;
+		}
+		.ui-bottom{
+			width: 100%;
+			height: 600px;
+			background: #333;
+			padding-top: 30px;
+		}
+		.ui-jly{
+			width: 40%;
+			height: 500px;
+			margin: 30px auto;
+			margin-top: 30px;
+			background: #fff;
+			border-radius: 8px;
+			text-align: center;
+			color: #7B8993;
+			line-height: 500px;
+		}
+		
+		@keyframes myfirst {
+			0% {
+				color:#000;
+			}
+			25% {
+				color: #BD362F;
+			}
+			50% {
+				color: #D9534F;
+			}
+			100% {
+				color: #333;
+			}
+		}

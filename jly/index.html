@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>JIANG</title>
+	</head>
+	<link rel="stylesheet" href="css/animate.min.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<body><!--ui-顶部导航-->
+		<div class="jly-top-div">
+			<img src="img/jlylogo.png" class="jly-logo animated bounceInLeft" />
+			<ul class="jly-nav animated bounceInRight">
+				<li id="ab">About me</li>
+				<li id="ui">UI</li>
+				<li id="in">Index</li>
+			</ul>
+		</div>
+		<!--ui-顶部导航end-->
+		<!--ui-内容大标题-->
+		<div class="jly-text">
+			<div class="one"><span class="jly-one-title">UX & UI designer</span>
+			<span class="jly-sec-title">The only way to do great work is to love what you do. If you haven't found it yet,keep looking. Don't settle. As with all matters of the heart, you'll know when you find it. ——Steve Paul Jo</span>
+			<span class="jly-sec-title" style="color:#666;">古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。——苏轼</span>
+			</div>
+			<div class="two">
+				<!--<img class="img-nie" src="img/nie1.png"style="width: 80%;margin: 32% 0 0 0;" />-->
+			</div>		
+		</div>
+		<!--ui-内容大标题end-->
+		<!--ui-房产税模块-->
+		<div class="jly-modal ui" id="ui-div">
+			<div class="ui-o"><img class="fcs" src="img/fcs.png" width="90%" style="margin: 30px;"/></div>
+			<div class="ui-t">
+				<span class="ui-title">2017-03</span>
+				<span class="ui-con">浙江省房产税网上交易中介版v2.0</span>
+			</div>		
+		</div>
+		<!--ui-房产税模块end-->
+		<!--ui-统计局模块-->
+		<div class="jly-modal tjj" id="ui-div">
+			<div class="ui-t">
+				<span class="ui-title" style="color: #fff;margin-left: 30px;">2017-02</span>
+				<span class="ui-con" style="color: #fff;margin-left: 30px;">浙江省统计局综合运维管理系统v2.0</span>
+			</div>	
+			<div class="ui-o"><img class="fcs" src="img/tjj.png" width="90%" style="margin: 30px 30px -4px 30px;"/></div>
+				
+		</div>
+		<!--ui-统计局模块end-->
+		<!--ui-古乐图模块-->
+		<div class="jly-modal glt" id="ui-div">
+			
+			<div class="ui-o"><img class="fcs" src="img/glt.png" width="90%" style="margin: 30px 30px 0 30px;"/></div>
+				<div class="ui-t">
+				<span class="ui-title">2016-10</span>
+				<span class="ui-con">古乐途专业男士背包商城v1.0</span>
+			</div>	
+		</div>
+		<!--ui-古乐图模块end-->
+		<!--ui-发财鱼模块-->
+		<div class="jly-modal fcy" id="ui-div">
+			
+			<div class="ui-o">
+				<img class="fcs" src="img/FCYshow.jpg" width="70%" style="display:block;margin: 20px auto;"/>
+			</div>
+				
+		</div>
+		<!--ui-发财鱼模块end-->
+		<div class="ui-bottom">
+			<div class="ui-jly">暂无数据添加</div>
+			
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript">
+			var h = window.innerHeight - 100;
+			$(".jly-text").height(h);
+			$("#ui").bind("click",function(){
+				window.scrollTo(h,h);
+				$(".fcs").addClass("animated bounceInLeft")
+				
+			});
+			$("#ab").bind("click",function(){
+				window.scrollTo(0,document.body.scrollHeight);
+			});
+			$("#in").bind("click",function(){
+				window.scrollTo(0,0);
+				$(".one").addClass("animated bounceInLeft")
+			});
+//			$(".img-nie").hover(function(){
+//				$(".img-nie").attr("src","img/nie2.png");
+//			});
+//			$(".img-nie").mouseout(function(){
+//				$(".img-nie").attr("src","img/nie1.png");
+//			});
+		</script>
+	</body>
+
+</html>
