@@ -3,6 +3,8 @@
 
 	<head>
 		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>JIANG</title>
 	</head>
 	<link rel="stylesheet" href="css/animate.min.css" type="text/css" />
@@ -30,7 +32,7 @@
 		<!--ui-内容大标题end-->
 		<!--ui-房产税模块-->
 		<div class="jly-modal ui" id="ui-div">
-			<div class="ui-o"><img class="fcs" src="img/fcs.png" width="90%" style="margin: 30px;"/></div>
+			<div class="ui-o"><img class="fcs-img" src="img/fcs.png" /></div>
 			<div class="ui-t">
 				<span class="ui-title">2017-03</span>
 				<span class="ui-con">浙江省房产税网上交易中介版v2.0</span>
@@ -43,14 +45,14 @@
 				<span class="ui-title" style="color: #fff;margin-left: 30px;">2017-02</span>
 				<span class="ui-con" style="color: #fff;margin-left: 30px;">浙江省统计局综合运维管理系统v2.0</span>
 			</div>	
-			<div class="ui-o"><img class="fcs" src="img/tjj.png" width="90%" style="margin: 30px 30px -4px 30px;"/></div>
+			<div class="ui-o"><img class="tjj-img" src="img/tjj.png"/></div>
 				
 		</div>
 		<!--ui-统计局模块end-->
 		<!--ui-古乐图模块-->
 		<div class="jly-modal glt" id="ui-div">
 			
-			<div class="ui-o"><img class="fcs" src="img/glt.png" width="90%" style="margin: 30px 30px 0 30px;"/></div>
+			<div class="ui-o"><img class="glt-img" src="img/glt.png"/></div>
 				<div class="ui-t">
 				<span class="ui-title">2016-10</span>
 				<span class="ui-con">古乐途专业男士背包商城v1.0</span>
@@ -61,7 +63,7 @@
 		<div class="jly-modal fcy" id="ui-div">
 			
 			<div class="ui-o">
-				<img class="fcs" src="img/FCYshow.jpg" width="70%" style="display:block;margin: 20px auto;"/>
+				<img class="fcy-img" src="img/FCYshow.jpg" style="display:block;margin: 20px auto;"/>
 			</div>
 				
 		</div>
@@ -72,7 +74,7 @@
 		</div>
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript">
-			var h = window.innerHeight - 100;
+			var h = window.innerHeight - 60;
 			$(".jly-text").height(h);
 			$("#ui").bind("click",function(){
 				window.scrollTo(h,h);

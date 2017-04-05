@@ -149,7 +149,21 @@
 			color: #7B8993;
 			line-height: 500px;
 		}
-		
+		.fcy-img{
+			width: 70%;
+		}
+		.glt-img{
+			width: 90%;
+			margin: 30px 30px 0 30px;
+		}
+		.tjj-img{
+			width:90%;
+			margin: 30px 30px -4px 30px;
+		}
+		.fcs-img{
+			width: 90%;
+			margin: 30px;
+		}
 		@keyframes myfirst {
 			0% {
 				color:#000;
@@ -164,3 +178,184 @@
 				color: #333;
 			}
 		}
+		@-moz-keyframes myfirst {
+			0% {
+				color:#000;
+			}
+			25% {
+				color: #BD362F;
+			}
+			50% {
+				color: #D9534F;
+			}
+			100% {
+				color: #333;
+			}
+		}
+		@-webkit-keyframes myfirst {
+			0% {
+				color:#000;
+			}
+			25% {
+				color: #BD362F;
+			}
+			50% {
+				color: #D9534F;
+			}
+			100% {
+				color: #333;
+			}
+		}
+		@-o-keyframes myfirst {
+			0% {
+				color:#000;
+			}
+			25% {
+				color: #BD362F;
+			}
+			50% {
+				color: #D9534F;
+			}
+			100% {
+				color: #333;
+			}
+		}
+		@media screen and (min-width:120px) and (max-width:760px){
+         .jly-text .one{
+			flex: 8;
+			-webkit-flex: 8;
+			/*background: #666;*/
+		}
+		.jly-text .two{
+			flex: 1;
+			-webkit-flex: 1;
+			/*background: #000000;*/
+		}
+		.jly-text {
+			width: 100%;
+			display: flex;
+			display: -webkit-flex;
+		    padding-top: 60px;
+		}
+		.jly-text .one{
+			flex: 4;
+			-webkit-flex: 4;
+			/*background: #666;*/
+		}
+		.jly-text .two{
+			display: none;
+			/*background: #000000;*/
+		}
+		.jly-one-title {
+			font-size: 32px;
+			display: block;
+			/*background: #fff;*/
+			width: 80%;
+		/*	margin-left: 10%;*/
+			margin-top:30%;
+			font-weight: bolder;
+			text-shadow: 2px 8px 12px #ddd;
+			animation: myfirst 5s infinite;
+            -moz-animation: myfirst 5s infinite;	/* Firefox */
+            -webkit-animation: myfirst 5s infinite;	/* Safari 和 Chrome */
+            -o-animation: myfirst 5s infinite;	/* Opera */
+		}
+		
+		.jly-sec-title {
+			font-size: 12px;
+			display: block;
+			/*background: #fff;*/
+			width: 60%;
+			line-height: 20px;
+			/*margin-left: 10%;*/
+			color: #999;
+			margin-top: 20px;
+		}
+		.jly-top-div {
+			width: 100%;
+			height: 50PX;
+			border-bottom: 1px #ccc solid;
+			/*background: #CCC;*/
+			position: fixed;
+			background: #fff;
+			z-index: 999999;
+		}
+		
+		.jly-logo {
+			width: 60px;
+			margin: 0 0 0 20px;
+		}
+		.jly-nav {
+			float: right;
+			display: block;
+			list-style: none;
+			/*background: #333;*/
+			margin-top: 12px;
+			margin-right: 20px;
+		}
+		
+		.jly-nav li {
+			font-size: 12px;
+			float: right;
+			/*background: red;*/
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			padding:0 28px;
+			text-align: center;
+			cursor: pointer;
+			border-radius: 50px;
+		}
+		.jly-nav li:hover {
+			float: right;
+			background: #eee;
+			line-height: 30px;
+			/*background: red;*/
+			padding:0 28px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.ui-jly{
+			width: 90%;
+			height: 500px;
+			margin: 30px auto;
+			margin-top: 30px;
+			background: #fff;
+			border-radius: 8px;
+			text-align: center;
+			color: #7B8993;
+			line-height: 500px;
+		}
+		.fcy-img{
+			width: 100%;
+			margin: 0;
+		}
+		.glt-img{
+			width: 100%;
+			margin: 0;
+			
+		}
+		.tjj-img{
+			width:100%;
+			margin: 0;
+			
+		}
+		.fcs-img{
+			width: 100%;
+			margin: 0;
+		}
+		.ui-title{
+			display: none;
+			font-size: 58px;
+			font-weight: bold;
+			margin-top: 180px;
+		}
+		.ui-con{
+			display: none;
+			font-size: 14px;
+		}
+		.ui-t{
+			display: none;
+		}
+     }
+		
