@@ -240,11 +240,18 @@
 				color: #333;
 			}
 		}
+		.mess-img{
+			display:block;width:70%;margin: 0 auto;
+			box-shadow: 2px 6px 16px #31708F;
+		}
 		@media screen and (min-width:120px) and (max-width:760px){
          .jly-text .one{
 			flex: 8;
 			-webkit-flex: 8;
 			/*background: #666;*/
+		}
+		.mess-img{
+			display:block;width:96%;margin: 0 auto;
 		}
 		.jly-text .two{
 			flex: 1;
