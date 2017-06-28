@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .canvas {
+            position: relative;
+            background: url(image/startBg.png);
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            -moz-background-size: 100% 100%;
+            background-size: 100% 100%;
+            width: 500px;
+            height: 500px;
+        }
+
+        .button {
+            position: absolute;
+            width: 255px;
+            height: 90px;
+            bottom: 20px;
+            left: 128px;
+            background: url(image/normal.png);
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            -moz-background-size: 100% 100%;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+
+        .button:active {
+            background: url(image/active.png);
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            -moz-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+
+        .countBox {
+            width: 500px;
+            overflow: hidden;
+        }
+
+        .countBox > div {
+            float: left;
+            width: 33%;
+            height: 166px;
+        }
+
+        .countBox div.snake {
+            background: url(image/head.png);
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            -moz-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+
+        .countBox div.frog {
+            background: url(image/food.png);
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            -moz-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+
+        .countBox div.countName {
+            width: 34%;
+            text-align: center;
+        }
+
+        .countBox div.countName .count {
+            width: 100%;
+            height: 104px;
+            text-align: center;
+            font-size: 60px;
+        }
+
+        .alertBox {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 500px;
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            -moz-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+
+        .alertBox div.buttonReload {
+            position: absolute;
+            width: 170px;
+            height: 45px;
+            top: 302px;
+            left: 165px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="canvas">
+    <img src="image/body.png" style="display:none;" id="body">
+    <img src="image/food.png" style="display:none;" id="food">
+    <img src="image/tip.png" style="display:none;" id="tip">
+    <div class="button" onclick="start()"></div>
+    <canvas class="canvasBox" id="snake" width="500px" height="500px">
+        你的浏览器不支持canvas
+    </canvas>
+    <div class="countBox">
+        <div class="snake"></div>
+        <div class="frog"></div>
+        <div class="countName">
+            <h5>You Get</h5>
+            <div class="count"></div>
+        </div>
+    </div>
+    <div class="alertBox">
+        <div class="buttonReload"></div>
+    </div>
+</div>
+<script>
+    var c = document.getElementById('snake');
+    var cxt = c.getContext('2d');
+    cxt.fillStyle = 'transparent';
+    cxt.fillRect(0, 0, 500, 500);
+    var snake = {
+        map: [],    //移动路径
+        size: 20,    //蛇身宽度
+        length: 8,   //蛇身长度
+        time: 150,   //初始移动速度
+        x: 20,  //蛇头初始位置X
+        y: 20,  //蛇头初始位置Y
+        direction: 2, // 0:左 1:上 2:右 3:下
+        foodX: 0,   //食物的位置
+        foodY: 0,   //食物的位置
+        set_game_speed: function (direction) {
+            switch (direction) {
+                case 1:
+                    this.y = this.y - this.size;
+                    break;
+                case 2:
+                    this.x = this.x + this.size;
+                    break;
+                case 0:
+                    this.x = this.x - this.size;
+                    break;
+                case 3:
+                    this.y = this.y + this.size;
+                    break;
+            }
+            this.eat_food();
+            this.is_dead();
+            this.render();
+        },
+        init: function () {
+            this.map.push({'x': this.x, 'y': this.y});
+            if (this.map.length > this.length) { //保持蛇身长度
+                var cl = this.map.shift(); //删除数组第一项，并且返回原元素
+                cxt.clearRect(cl['x'], cl['y'], this.size, this.size);
+            }
+        },
+        render: function () {
+            this.init();
+            var img = document.getElementById("body");
+            var tip = document.getElementById("tip");
+            cxt.drawImage(img, this.x, this.y, 20, 20);
+        },
+        rand_food: function () {
+//            for (var i = 0; i < this.map.length; i++) {
+//                var foodx = Math.ceil(Math.random() * 25);
+//                var foody = Math.ceil(Math.random() * 25);
+//                if (this.map[i].x != foodx && this.map[i].y != foody) {
+//                    this.foodX = foodx;
+//                    this.foodY = foody;
+//                    break;
+//                }
+//            }
+
+            var foodx = Math.ceil(Math.random() * 24);
+            var foody = Math.ceil(Math.random() * 24);
+            this.foodX = foodx;
+            this.foodY = foody;
+            var img = document.getElementById("food");
+            cxt.drawImage(img, this.foodX * 20, this.foodY * 20, 20, 20);
+        },
+        eat_food: function () {
+            if (this.x == this.foodX * 20 && this.y == this.foodY * 20) {
+//                cxt.clearRect(this.foodX * 10, this.foodY * 10, 10, 10);
+                this.length++;
+                this.rand_food();
+            }
+            $('.count').html(this.length - 8);
+        },
+        is_dead: function () {
+            if (this.x > 480 || this.y > 480 || this.x < 0 || this.y < 0) {
+                clearInterval(interval);
+                interval = null;
+                cxt.clearRect(0, 0, 500, 500);
+                $('.alertBox').css({'background': 'url(image/hitWall.png)', 'display': 'block'});
+                $(document).unbind("keydown"); //移除keydown
+            }
+            for (var i = 0; i < this.map.length; i++) {
+                if (parseInt(this.map[i].x) == this.x && parseInt(this.map[i].y) == this.y) {
+                    clearInterval(interval);
+                    interval = null;
+                    cxt.clearRect(0, 0, 500, 500);
+                    $('.alertBox').css({'background': 'url(image/eatSelf.png)', 'display': 'block'});
+                    $(document).unbind("keydown"); //移除keydown
+                }
+            }
+        }
+    };
+    var interval = null;
+    function start() {
+        $('.canvas').css('background', 'url(image/bg.png)');
+        $('.button').css('display', 'none');
+        snake.rand_food();
+        interval = setInterval(function () {
+            snake.set_game_speed(snake.direction)
+        }, snake.time); //移动中
+    }
+    $(document).bind("keydown", function (e) {
+        var code = e.keyCode - 37;
+        switch (code) {
+            case 1 :
+                snake.direction = 1;
+                break;//上
+            case 2 :
+                snake.direction = 2;
+                break;//右
+            case 3 :
+                snake.direction = 3;
+                break;//下
+            case 0 :
+                snake.direction = 0;
+                break;//左
+        }
+    });
+    $('.buttonReload').bind("click", function (e) {
+        window.location.reload();
+    });
+</script>
+</body>
+</html>
